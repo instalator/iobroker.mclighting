@@ -1,0 +1,260 @@
+{
+  "common": {
+    "name": "mclighting",
+    "version": "0.1.2",
+    "news": {
+      "0.1.2": {
+        "en": "change role",
+        "de": "change role",
+        "ru": "change role",
+        "pt": "change role",
+        "nl": "change role",
+        "fr": "change role",
+        "it": "change role",
+        "es": "change role",
+        "pl": "change role",
+        "zh-cn": "change role"
+      },
+      "0.1.1": {
+        "en": "Fix clear timeouts",
+        "de": "Fix clear timeouts",
+        "ru": "Fix clear timeouts",
+        "pt": "Fix clear timeouts",
+        "nl": "Fix clear timeouts",
+        "fr": "Fix clear timeouts",
+        "it": "Fix clear timeouts",
+        "es": "Fix clear timeouts",
+        "pl": "Fix clear timeouts",
+        "zh-cn": "Fix clear timeouts"
+      },
+      "0.1.0": {
+        "en": "frefactoring\nadded compact mode",
+        "de": "frefactoring\nadded compact mode",
+        "ru": "frefactoring\nadded compact mode",
+        "pt": "frefactoring\nadded compact mode",
+        "nl": "frefactoring\nadded compact mode",
+        "fr": "frefactoring\nadded compact mode",
+        "it": "frefactoring\nadded compact mode",
+        "es": "frefactoring\nadded compact mode",
+        "pl": "frefactoring\nadded compact mode",
+        "zh-cn": "frefactoring\nadded compact mode"
+      },
+      "0.0.12": {
+        "en": "fix error",
+        "de": "fix error",
+        "ru": "fix error",
+        "pt": "fix error",
+        "fr": "fix error",
+        "nl": "fix error"
+      }
+    },
+    "title": "McLighting",
+    "titleLang": {
+      "en": "McLighting adapter",
+      "de": "McLighting Vorlagenadapter",
+      "ru": "McLighting адаптер",
+      "pt": "Adaptador de McLighting",
+      "nl": "McLighting-adapter",
+      "fr": "McLighting adapter",
+      "it": "McLighting adapter",
+      "es": "McLighting adapter"
+    },
+    "desc": {
+      "en": "Control the ESP8266 based multi-client lighting gadget",
+      "de": "Steuern Sie das ESP8266-basierte Multi-Client-Beleuchtungs-Gadget",
+      "ru": "Control the ESP8266 based multi-client lighting gadget",
+      "pt": "Controlar o gadget de iluminação para múltiplos clientes baseado no ESP8266",
+      "fr": "Contrôlez le gadget d'éclairage multi-client ESP8266",
+      "nl": "Bedien de op ESP8266 gebaseerde multi-client verlichtingsgadget",
+      "it": "Controlla il gadget di illuminazione multi-cliente basato su ESP8266",
+      "es": "Controle el dispositivo de iluminación multi-cliente basado en ESP8266"
+    },
+    "authors": [
+      "instalator <vvvalt@mail.ru>"
+    ],
+    "license": "MIT",
+    "platform": "Javascript/Node.js",
+    "mode": "daemon",
+    "icon": "mclighting.png",
+    "materialize": true,
+    "enabled": false,
+    "compact": true,
+    "extIcon": "https://raw.githubusercontent.com/instalator/ioBroker.mclighting/master/admin/mclighting.png",
+    "keywords": [
+      "mclighting",
+      "rgb",
+      "light",
+      "ws2812",
+      "esp8266"
+    ],
+    "readme": "https://github.com/instalator/ioBroker.mclighting/blob/master/README.md",
+    "localLink": "%web_protocol%://%native_host%:80",
+    "loglevel": "info",
+    "type": "lighting"
+  },
+  "native": {
+    "host": "127.0.0.1",
+    "port": 81
+  },
+  "objects": [],
+  "instanceObjects": [
+    {
+      "_id": "info.connection",
+      "type": "state",
+      "common": {
+        "role": "indicator.connected",
+        "name": "If connected to McLighting",
+        "type": "boolean",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "mode",
+      "type": "state",
+      "common": {
+        "role": "state",
+        "name": "Set mode",
+        "type": "string",
+        "read": true,
+        "write": true,
+        "def": ""
+      },
+      "native": {}
+    },
+    {
+      "_id": "fx_mode",
+      "type": "state",
+      "common": {
+        "role": "state",
+        "name": "Set animation mode",
+        "type": "number",
+        "read": true,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "fx_mode_name",
+      "type": "state",
+      "common": {
+        "role": "state",
+        "name": "Current name animation mode",
+        "type": "string",
+        "read": true,
+        "write": false,
+        "def": ""
+      },
+      "native": {}
+    },
+    {
+      "_id": "speed",
+      "type": "state",
+      "common": {
+        "role": "state",
+        "name": "Set speed",
+        "type": "number",
+        "min": 0,
+        "max": 255,
+        "read": true,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "brightness",
+      "type": "state",
+      "common": {
+        "role": "level.dimmer",
+        "name": "Set brightness",
+        "type": "number",
+        "min": 0,
+        "max": 255,
+        "read": true,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "color",
+      "type": "state",
+      "common": {
+        "role": "level.color.rgb",
+        "name": "Set default color of the lamp",
+        "type": "string",
+        "read": true,
+        "write": true,
+        "def": ""
+      },
+      "native": {}
+    },
+    {
+      "_id": "color_R",
+      "type": "state",
+      "common": {
+        "role": "level.color",
+        "name": "Set default Red color of the lamp",
+        "type": "number",
+        "min": 0,
+        "max": 255,
+        "read": true,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "color_G",
+      "type": "state",
+      "common": {
+        "role": "level.color.green",
+        "name": "Set default Green color of the lamp",
+        "type": "number",
+        "min": 0,
+        "max": 255,
+        "read": true,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "color_B",
+      "type": "state",
+      "common": {
+        "role": "level.color.blue",
+        "name": "Set default Blue color of the lamp",
+        "type": "number",
+        "min": 0,
+        "max": 255,
+        "read": true,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "list_modes",
+      "type": "state",
+      "common": {
+        "role": "state",
+        "name": "List of avilable animation modes as array",
+        "type": "array",
+        "read": true,
+        "write": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "power",
+      "type": "state",
+      "common": {
+        "role": "switch.light",
+        "name": "Turn On/Off",
+        "type": "boolean",
+        "read": true,
+        "write": true
+      },
+      "native": {}
+    }
+  ]
+}
