@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "mclighting",
-    "version": "0.1.2",
+    "version": "1.0.0",
     "news": {
       "0.1.2": {
         "en": "change role",
